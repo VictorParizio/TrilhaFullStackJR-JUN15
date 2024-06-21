@@ -4,24 +4,31 @@
   "description": "Plataforma para Gestão de Projetos",
   "main": "index.js",
   "scripts": {
-    "dev": "ts-node src/server.ts",
-    "build": "tsc"
+    "dev": "tsx watch src/server.ts",
+    "start": "node build/server.js",
+    "build": "tsup src --out-dir build"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@prisma/client": "^5.15.1",
+    "bcrypt": "^5.1.1",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
-    "express": "^4.19.2"
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2"
   },
   "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
     "@types/cors": "^2.8.17",
     "@types/express": "^4.17.21",
+    "@types/jsonwebtoken": "^9.0.6",
     "@types/node": "^20.14.7",
     "prisma": "^5.15.1",
     "ts-node": "^10.9.2",
+    "tsup": "^8.1.0",
+    "tsx": "^4.15.7",
     "typescript": "^5.5.2"
   }
 }
