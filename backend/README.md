@@ -54,7 +54,7 @@ docker-compose up -d
 2. **Gerenciamento de Projetos**
 
    - [ x ] Deve ser possível Criar um projeto.
-   - [ ] Deve ser possível Atualizar um projeto.
+   - [ x ] Deve ser possível Atualizar um projeto.
    - [ ] Deve ser possível Deletar um projeto.
    - [ ] Deve ser possível Listar todos os projetos.
 
