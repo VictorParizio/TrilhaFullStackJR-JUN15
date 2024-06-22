@@ -53,22 +53,22 @@ docker-compose up -d
 
 2. **Gerenciamento de Projetos**
 
-   - [ ] Deve ser possível Criar um projeto.
+   - [ x ] Deve ser possível Criar um projeto.
    - [ ] Deve ser possível Atualizar um projeto.
    - [ ] Deve ser possível Deletar um projeto.
    - [ ] Deve ser possível Listar todos os projetos.
 
 ### Regras de Negócio
 
-- [ ] O usuário não pode se cadastrar com email duplicado.
+- [ x ] O usuário não pode se cadastrar com email duplicado.
 - [ ] Apenas usuários autenticados podem acessar os projetos.
 - [ ] Todo projeto deve conter título e descrição.
 
 ### Requisitos Técnicos
 
-- [ ] Os dados da aplicação devem persistir em um banco de dados PostgreSQL.
-- [ ] A senha deve ser criptografada antes de ser armazenada no banco.
+- [ x ] Os dados da aplicação devem persistir em um banco de dados PostgreSQL.
+- [ x ] A senha deve ser criptografada antes de ser armazenada no banco.
 - [ ] Autenticar o usuário ao Registrar-se.
-- [ ] Autenticar o usuário ao Entrar na aplicação.
+- [ x ] Autenticar o usuário ao Entrar na aplicação.
 - [ ] Listar todos os projetos existentes.ack-end.
 - [ ] Implementar documentação da API (e.g., usando Swagger).
