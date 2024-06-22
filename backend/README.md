@@ -71,3 +71,6 @@ docker-compose up -d
 - [ x ] Autenticar o usuário ao Registrar-se.
 - [ x ] Autenticar o usuário ao Entrar na aplicação.
 - [ ] Implementar documentação da API (e.g., usando Swagger).
+
+- [ ] Validar todos os dados que chegam na aplicação.
+- [ x ] Isolar todas as chamadas ao BD na camada de Service

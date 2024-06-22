@@ -1,4 +1,7 @@
-import { prisma } from "@/lib/prisma";
+import {
+  findProjectById,
+  updateProject as updateProjectInRepository,
+} from "@/repositories/project.repositories";
 import { Request, Response } from "express";
 
 export const updateProject = async (req: Request, res: Response) => {
@@ -6,19 +9,18 @@ export const updateProject = async (req: Request, res: Response) => {
   const { title, description } = req.body;
 
   try {
-    const foundProject = await prisma.project.findFirst({ where: { id } });
+    const foundProject = await findProjectById(id);
 
     if (!foundProject) {
       return res.status(404).json({ message: "Projeto não encontrado" });
     }
 
-    await prisma.project.update({
-      where: { id },
-      data: { title, description },
-    });
+    const data = { title, description };
+
+    await updateProjectInRepository({ id, data });
 
     return res.status(204).json();
   } catch (error: any) {
-    return res.status(500).json({ mensagem: "Erro interno do Servidor" });
+    return res.status(500).json({ message: "Erro interno do Servidor" });
   }
 };

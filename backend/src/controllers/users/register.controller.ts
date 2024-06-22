@@ -1,7 +1,7 @@
+import { createUser, findUserByEmail } from "@/repositories/user.repository";
 import { encryptPassword } from "@/util/encrypt";
 import { generateToken } from "@/util/jwt";
 import { Request, Response } from "express";
-import { createUser, findUserByEmail } from "../../repositories/user.repository";
 
 export const registerUser = async (req: Request, res: Response) => {
   const { name, email, password } = req.body;

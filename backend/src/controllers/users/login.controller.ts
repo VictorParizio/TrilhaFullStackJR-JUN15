@@ -1,7 +1,7 @@
+import { findUserByEmail } from "@/repositories/user.repository";
 import { comparePassword } from "@/util/encrypt";
 import { generateToken } from "@/util/jwt";
 import { Request, Response } from "express";
-import { findUserByEmail } from "../../repositories/user.repository";
 
 export const loginUser = async (req: Request, res: Response) => {
   const { email, password } = req.body;

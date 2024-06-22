@@ -1,8 +1,9 @@
-import { prisma } from "@/lib/prisma";
+import { createNewProject } from "@/repositories/project.repositories";
+import { findUserById } from "@/repositories/user.repository";
 import { Request, Response } from "express";
 
 interface AuthenticatedRequest extends Request {
-  authenticatedUser?: string;
+  authenticatedUser: string;
 }
 
 export const createProject = async (
@@ -16,24 +17,24 @@ export const createProject = async (
     return res.status(400).json({ message: "Usuário não autenticado" });
   }
 
-  const user = await prisma.user.findFirst({ where: { id } });
+  const user = await findUserById(id);
 
   if (!user) {
     return res.status(404).json({ message: "Usuário não encontrado" });
   }
 
-  try {
-    const newProject = await prisma.project.create({
-      data: {
-        title,
-        description,
-        user: {
-          connect: {
-            id,
-          },
-        },
+  const data = {
+    title,
+    description,
+    user: {
+      connect: {
+        id,
       },
-    });
+    },
+  };
+
+  try {
+    const newProject = await createNewProject(data);
 
     res.status(201).json({
       project: newProject,
