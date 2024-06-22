@@ -61,14 +61,13 @@ docker-compose up -d
 ### Regras de Negócio
 
 - [ x ] O usuário não pode se cadastrar com email duplicado.
-- [ ] Apenas usuários autenticados podem acessar os projetos.
-- [ ] Todo projeto deve conter título e descrição.
+- [ x ] Apenas usuários autenticados podem acessar os projetos.
+- [ x ] Todo projeto deve conter título e descrição.
 
 ### Requisitos Técnicos
 
 - [ x ] Os dados da aplicação devem persistir em um banco de dados PostgreSQL.
 - [ x ] A senha deve ser criptografada antes de ser armazenada no banco.
-- [ ] Autenticar o usuário ao Registrar-se.
+- [ x ] Autenticar o usuário ao Registrar-se.
 - [ x ] Autenticar o usuário ao Entrar na aplicação.
-- [ ] Listar todos os projetos existentes.ack-end.
 - [ ] Implementar documentação da API (e.g., usando Swagger).
