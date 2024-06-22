@@ -6,5 +6,6 @@ const route = Router();
 
 route.post("/project", createProject);
 route.put("/project/:id", updateProject);
+route.delete("/project/:id")
 
 export default route;
