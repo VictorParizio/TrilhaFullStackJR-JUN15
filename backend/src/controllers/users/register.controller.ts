@@ -1,13 +1,13 @@
-import { prisma } from "@/lib/prisma";
 import { encryptPassword } from "@/util/encrypt";
 import { generateToken } from "@/util/jwt";
 import { Request, Response } from "express";
+import { createUser, findUserByEmail } from "../../repositories/user.repository";
 
 export const registerUser = async (req: Request, res: Response) => {
   const { name, email, password } = req.body;
 
   try {
-    const foundEmail = await prisma.user.findFirst({ where: { email } });
+    const foundEmail = await findUserByEmail(email);
 
     if (foundEmail) {
       return res
@@ -16,15 +16,9 @@ export const registerUser = async (req: Request, res: Response) => {
     }
 
     const encryptedPassword = await encryptPassword(password.toString());
-    const newUser = await prisma.user.create({
-      data: {
-        name,
-        email,
-        password: encryptedPassword,
-      },
-    });
+    const data = { name, email, password: encryptedPassword };
+    const newUser = await createUser(data);
     const { password: _, ...userWithoutPassword } = newUser;
-
     const access_token = generateToken({ user_id: newUser.id }, "8h");
 
     return res.status(201).json({

@@ -1,13 +1,13 @@
-import { prisma } from "@/lib/prisma";
 import { comparePassword } from "@/util/encrypt";
 import { generateToken } from "@/util/jwt";
 import { Request, Response } from "express";
+import { findUserByEmail } from "../../repositories/user.repository";
 
 export const loginUser = async (req: Request, res: Response) => {
   const { email, password } = req.body;
 
   try {
-    const user = await prisma.user.findFirst({ where: { email } });
+    const user = await findUserByEmail(email);
 
     if (!user) {
       return res.status(401).json({ message: "Email e/ou senha inválidos" });
