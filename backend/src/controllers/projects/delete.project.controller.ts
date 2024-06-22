@@ -12,7 +12,7 @@ export const deleteProject = async (req: Request, res: Response) => {
     }
 
     await prisma.project.delete({ where: { id } });
-    return res.status(204);
+    return res.status(204).json();
   } catch (error: any) {
     return res.status(500).json({ mensagem: "Erro interno do Servidor" });
   }
