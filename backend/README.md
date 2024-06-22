@@ -48,8 +48,8 @@ docker-compose up -d
 
 1. **Registro e Autenticação**
 
-   - [ ] Deve ser possível se Registrar.
-   - [ ] Deve ser possível se Autenticar.
+   - [ x ] Deve ser possível se Registrar.
+   - [ x ] Deve ser possível se Autenticar.
 
 2. **Gerenciamento de Projetos**
 
