@@ -2,7 +2,7 @@ import { prisma } from "@/lib/prisma";
 import { Request, Response } from "express";
 
 export const updateProject = async (req: Request, res: Response) => {
-  const id = req.params.id;
+  const { id } = req.params;
   const { title, description } = req.body;
 
   try {
