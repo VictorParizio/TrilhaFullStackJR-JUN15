@@ -56,7 +56,7 @@ docker-compose up -d
    - [ x ] Deve ser possível Criar um projeto.
    - [ x ] Deve ser possível Atualizar um projeto.
    - [ x ] Deve ser possível Deletar um projeto.
-   - [ ] Deve ser possível Listar todos os projetos.
+   - [ x ] Deve ser possível Listar todos os projetos.
 
 ### Regras de Negócio
 
