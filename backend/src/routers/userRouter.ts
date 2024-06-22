@@ -1,5 +1,5 @@
-import { loginUser } from "@/controllers/login.controller";
-import { registerUser } from "@/controllers/register.controller";
+import { loginUser } from "@/controllers/users/login.controller";
+import { registerUser } from "@/controllers/users/register.controller";
 import { validateToken } from "@/middlewares/token";
 import { Router } from "express";
 
