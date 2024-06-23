@@ -19,14 +19,8 @@ export const updateProject = async (
   try {
     const foundProject = await findProjectById(id);
 
-    if (!foundProject) {
+    if (!foundProject || userId !== foundProject.user_id) {
       return res.status(404).json({ message: "Projeto não encontrado" });
-    }
-
-    if (userId !== foundProject.user_id) {
-      return res
-        .status(403)
-        .json({ message: "Você não tem permissão para editar este projeto." });
     }
 
     const data = { title, description };
