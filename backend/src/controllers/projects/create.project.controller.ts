@@ -1,9 +1,8 @@
 import { createNewProject } from "@/repositories/project.repositories";
-import { findUserById } from "@/repositories/user.repository";
 import { Request, Response } from "express";
 
 interface AuthenticatedRequest extends Request {
-  authenticatedUser?: string;
+  authenticatedUser: string;
 }
 
 export const createProject = async (
@@ -12,16 +11,6 @@ export const createProject = async (
 ) => {
   const { title, description } = req.body;
   const id = req.authenticatedUser;
-
-  if (!id) {
-    return res.status(400).json({ message: "Usuário não autenticado" });
-  }
-
-  const user = await findUserById(id);
-
-  if (!user) {
-    return res.status(404).json({ message: "Usuário não encontrado" });
-  }
 
   const data = {
     title,

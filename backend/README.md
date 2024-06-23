@@ -73,6 +73,7 @@ docker compose up -d
 
 - [ x ] O usuário não pode se cadastrar com email duplicado.
 - [ x ] Apenas usuários autenticados podem acessar os projetos.
+- [ x ] Apenas o usuário que criou o projeto pode acessar, editar e excluir um projeto.
 - [ x ] Todo projeto deve conter título e descrição.
 
 ### Requisitos Técnicos
@@ -84,4 +85,4 @@ docker compose up -d
 - [ x ] Implementar documentação da API (e.g., usando Swagger).
 
 - [ x ] Isolar todas as chamadas ao BD na camada de Service
-- [ ] Validar todos os dados que chegam no sistema.
+- [ x ] Validar todos os dados que chegam no sistema.

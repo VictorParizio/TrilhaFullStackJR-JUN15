@@ -20,12 +20,9 @@ export const validateToken = async (
   const { authorization } = req.headers;
 
   if (!authorization) {
-    return res
-      .status(401)
-      .json({
-        message:
-          "Para ter acesso, faça login ou cadastre-se!",
-      });
+    return res.status(401).json({
+      message: "Para ter acesso, faça login ou cadastre-se!",
+    });
   }
 
   try {
@@ -52,8 +49,15 @@ export const validateToken = async (
         message:
           "Para acessar este recurso um token de autenticação válido deve ser enviado.",
       });
+    } else if (error.name === "SyntaxError") {
+      return res.status(401).json({
+        message:
+          "Para acessar este recurso um token de autenticação válido deve ser enviado.",
+      });
     } else {
-      return res.status(500).json({ mensagem: "Erro interno do Servidor" });
+      return res
+        .status(500)
+        .json({ mensagem: "Erro interno do Servidor " + error.name });
     }
   }
 };
