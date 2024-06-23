@@ -1,10 +1,16 @@
 # Backend Smart Plan
 
+![Node](https://img.shields.io/badge/Node-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
+![Express](https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+![Prisma](https://img.shields.io/badge/Prisma-000000?style=for-the-badge&logo=Prisma&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-007ACC?style=for-the-badge&logo=Docker&logoColor=white)
+
 ## Descrição
 
-**Backend Smart Plan** é uma plataforma para Gestão de Projetos, desenvolvida com Node.js e Express, utilizando TypeScript integrada com um banco de dados PostgreSQL.
+**O Servidor Smart Plan** é um sistema para Gestão de Projetos, desenvolvida com Node.js, Express e TypeScript, utilizando Docker integrado com Prisma para gerenciar banco de dados PostgreSQL.
 
-A aplicação web permitirá aos usuários listar, cadastrar, editar e excluir projetos, cada um contendo um título e uma descrição.
+O sistema permite aos usuários se cadastrar, fazer login e listar, cadastrar, editar e excluir projetos, contendo um título e uma descrição.
 
 ## Requisitos
 
@@ -32,16 +38,21 @@ A aplicação web permitirá aos usuários listar, cadastrar, editar e excluir p
    npm run dev
    ```
 
+4. Acesse no seu navegador:
+   ```ss
+   http://localhost:3000/
+   ```
+
 ## Docker
 
-A aplicação utiliza o Docker para configurar e gerenciar o banco de dados PostgreSQL. Certifique-se de ter o Docker instalado e funcionando em seu sistema.
+O sistema utiliza o Docker para configurar e gerenciar o banco de dados PostgreSQL. Certifique-se de ter o Docker instalado e funcionando em seu sistema.
 
 ### Docker Compose
 
 Para iniciar o banco de dados PostgreSQL usando Docker Compose execute o comando:
 
 ```sh
-docker-compose up -d
+docker compose up -d
 ```
 
 ### Requisitos Funcionais
@@ -66,11 +77,11 @@ docker-compose up -d
 
 ### Requisitos Técnicos
 
-- [ x ] Os dados da aplicação devem persistir em um banco de dados PostgreSQL.
+- [ x ] Os dados do sistema devem persistir em um banco de dados.
 - [ x ] A senha deve ser criptografada antes de ser armazenada no banco.
 - [ x ] Autenticar o usuário ao Registrar-se.
-- [ x ] Autenticar o usuário ao Entrar na aplicação.
-- [ ] Implementar documentação da API (e.g., usando Swagger).
+- [ x ] Autenticar o usuário ao Entrar no sistema.
+- [ x ] Implementar documentação da API (e.g., usando Swagger).
 
-- [ ] Validar todos os dados que chegam na aplicação.
 - [ x ] Isolar todas as chamadas ao BD na camada de Service
+- [ ] Validar todos os dados que chegam no sistema.

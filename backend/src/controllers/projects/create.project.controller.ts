@@ -3,7 +3,7 @@ import { findUserById } from "@/repositories/user.repository";
 import { Request, Response } from "express";
 
 interface AuthenticatedRequest extends Request {
-  authenticatedUser: string;
+  authenticatedUser?: string;
 }
 
 export const createProject = async (

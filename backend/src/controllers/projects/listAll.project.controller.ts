@@ -2,7 +2,7 @@ import { findProjectsByUserId } from "@/repositories/project.repositories";
 import { Request, Response } from "express";
 
 interface AuthenticatedRequest extends Request {
-  authenticatedUser: string;
+  authenticatedUser?: string;
 }
 
 export const listAllProject = async (

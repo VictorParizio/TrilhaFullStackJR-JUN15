@@ -1,8 +1,10 @@
 import express from "express";
-import userRouter from "./userRouter";
-import projectRouter from "./projectRouter";
+import userRouter from "./user.router";
+import projectRouter from "./project.router";
+import swagger from "./swagger.router";
 
 export const router = express();
 
+router.use(swagger);
 router.use(userRouter);
 router.use(projectRouter);
