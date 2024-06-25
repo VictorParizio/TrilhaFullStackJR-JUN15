@@ -1,0 +1,44 @@
+.container-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  background-color: #000000;
+  width: 100%;
+}
+
+.container-footer footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 1.2rem 2rem;
+}
+
+.container-footer .links-utils {
+  display: flex;
+  height: 16px;
+  gap: 10px;
+}
+
+.container-footer p {
+  font-size: 1.4rem;
+  margin: 0;
+}
+
+.container-footer .top {
+  width: 68px;
+}
+
+@media (max-width: 568px) {
+  .container-footer footer {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .container-footer .top {
+    display: none;
+  }
+}
