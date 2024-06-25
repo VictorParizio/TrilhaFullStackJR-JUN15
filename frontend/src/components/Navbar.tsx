@@ -1,13 +1,12 @@
 import { Link, useLocation } from "react-router-dom";
-import "./navbar.css";
 
 export const Navbar = () => {
   const { pathname: currentPathname, hash: currentHash } = useLocation();
 
   const navItems = [
     { href: "#hero", label: "Inicio" },
-    { href: "#news", label: "Novidades" },
     { href: "#features", label: "Recursos" },
+    { href: "#news", label: "Novidades" },
     { href: "#community", label: "Comunidade" },
   ];
 
