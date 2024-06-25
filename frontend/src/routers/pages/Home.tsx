@@ -1,17 +1,18 @@
-import { FunctionComponent, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import "./home.css";
+import { useEffect, useState } from "react";
+
+import { RiDeleteBin6Fill } from "react-icons/ri";
+import { FaEdit } from "react-icons/fa";
+import { MdDevices, MdLibraryAdd, MdOutlineSecurity } from "react-icons/md";
+import { IoSearch } from "react-icons/io5";
+
+import { Carousel } from "../../components/Carousel";
 
 import ipad from "/mockup/ipad.png";
-import { MdDevices, MdLibraryAdd, MdOutlineSecurity } from "react-icons/md";
-import { FaEdit } from "react-icons/fa";
-import { RiDeleteBin6Fill } from "react-icons/ri";
-import { IoSearch } from "react-icons/io5";
-import { Carousel } from "../../components/Carousel";
 
 const userAuthenticated = false;
 
-export const Home: FunctionComponent = () => {
+export const Home = () => {
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {

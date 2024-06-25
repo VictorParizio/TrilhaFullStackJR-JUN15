@@ -1,0 +1,124 @@
+.home .bg-banner,
+.home #news .bg-container
+  position: absolute
+  top: 0
+  left: 0
+  z-index: -2
+
+  background-color: #000000
+  height: 500px
+  width: 100vw
+  box-shadow: 0 8px 16px #000000, 0 -8px 16px #000000
+
+.home
+  section
+    max-width: 1080px
+    margin: 0 auto
+    padding: 5.2rem 4rem
+
+  h2,
+  h2 strong
+    font-size: 2.8rem
+    margin-bottom: 4rem
+
+  #hero
+    position: relative
+
+    .info-hero
+      display: flex
+      justify-content: center
+      flex-direction: column
+      height: 45rem
+      width: 500px
+
+      p
+        letter-spacing: 3.2px
+
+      h1,
+      strong
+        font-size: 8rem
+        line-height: 4.2rem
+        padding: 2.4rem 0 6rem
+
+    img
+      position: absolute
+      top: 0
+      right: -120px
+      max-height: 60rem
+      z-index: -1
+
+      &.animated
+        animation: slideUp 2s ease-in-out forwards
+
+  a
+    background-color: #e53939
+    background: linear-gradient(to bottom, #e53939, #000000)
+    box-shadow: 0 2px 8px #242424
+    width: 24rem
+    text-align: center
+    padding: 2rem
+    border-radius: 50px
+
+  #features
+    margin: 6rem auto
+
+  #news
+    position: relative
+
+    h2
+      margin-top: 5.2rem
+
+    ul
+      display: grid
+      grid-template-columns: repeat(3, 1fr)
+      gap: 60px
+
+    ul
+      li
+        display: flex
+        width: 32rem
+        height: 8rem
+        color: rgb(152, 152, 152)
+
+      &:hover
+        color: #ffffff
+        scale: 1.1
+        border-top: #e53939 1px solid
+        border-bottom: #e53939 1px solid
+        height: 8rem
+        padding: 8px
+        border-radius: 8px
+        transition: ease 0.3s
+
+      p
+        font-size: 1.2rem
+
+  #community
+    max-width: 60rem
+    margin: 12rem auto
+    text-align: center
+
+    p
+      margin-bottom: 6rem
+
+  .icon
+    font-size: 6rem
+    margin-right: 12px
+
+  .icon-search,
+  .icon-devices
+    font-size: 7rem
+    margin-right: 12px
+
+  .icon-trash
+    font-size: 5rem
+    margin-right: 12px
+
+@keyframes slideUp
+  0%
+    transform: translateY(100%)
+    opacity: 0
+
+  100%
+    transform: translateY(0)
+    opacity: 1
