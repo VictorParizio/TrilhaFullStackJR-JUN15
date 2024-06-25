@@ -1,4 +1,4 @@
-# Smart Plan
+# Smart Plan (Front-End)
 
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
@@ -6,8 +6,6 @@
 ![Redux](https://img.shields.io/badge/Redux-593D88?style=for-the-badge&logo=redux&logoColor=white)
 ![Axios](https://img.shields.io/badge/Axios-20232A?style=for-the-badge&logo=Axios&logoColor=white)
 ![Sass](https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white)
-
-Smart Plan é uma plataforma de Gestão de Projetos, desenvolvida com React.js + TypeScript e estilizada com Sass.
 
 ## Índice
 
@@ -20,15 +18,14 @@ Smart Plan é uma plataforma de Gestão de Projetos, desenvolvida com React.js +
 - [Requisitos Técnicos](#requisitos-técnicos)
 - [Requisitos Adicionais](#requisitos-adicionais)
 - [Instalação](#instalação)
-- [Uso](#uso)
-- [Contribuição](#contribuição)
-- [Licença](#licença)
 - [Autores](#autores)
 - [Contato](#contato)
 
 ## Descrição
 
-**A Plataforma Smart Plan** é um sistema que permite aos usuários se cadastrar, fazer login, e listar, cadastrar, editar e excluir projetos, contendo um título e uma descrição.
+A **Smart Plan** é uma plataforma robusta e intuitiva para Gestão de Projetos, desenvolvida com uma stack moderna incluindo React.js, TypeScript e Sass. Esta aplicação responsiva permite aos usuários acessar e gerenciar seus projetos de maneira eficiente e prática, em qualquer lugar e a qualquer momento.
+
+Com uma interface amigável e design responsivo, a **Smart Plan** visa proporcionar uma experiência de usuário excelente, garantindo que a gestão de projetos seja simplificada e eficiente.
 
 ## Tecnologias Utilizadas
 
@@ -46,9 +43,14 @@ Utilize as cores da paleta da **Codigo Certo Coders**:
 
 ## Funcionalidades do Front-End
 
-- Página para listar os projetos cadastrados.
-- Formulários para adicionar e editar projetos.
-- Botões para editar e deletar projetos, com confirmação antes de executar a ação.
+A plataforma oferece funcionalidades completas para registro e autenticação, permitindo aos usuários:
+
+- Se cadastrar com facilidade.
+- Fazer login de forma segura.
+- Listar todos os projetos cadastrados.
+- Cadastrar novos projetos com título e descrição.
+- Editar detalhes de projetos existentes.
+- Excluir projetos quando necessário.
 
 ## Requisitos Funcionais
 
@@ -88,18 +90,6 @@ Utilize as cores da paleta da **Codigo Certo Coders**:
 - [ ] Armazenar o token de acesso do usuário ao Registrar-se.
 - [ ] Armazenar o token de acesso do usuário ao Entrar na aplicação.
 - [ ] Listar todos os projetos de um usuário.
-- [ ] Fazer paginação, 10 por página (opcional).
-- [ ] Incluir data de criação (opcional).
-- [ ] Incluir data de atualização (opcional).
-- [ ] Implementar controle de versão da API (opcional).
-- [ ] Implementar testes automatizados (unitários e de integração).
-- [ ] Implementar CORS para permitir acesso do front-end ao back-end.
-- [ ] Implementar documentação da API (e.g., usando Swagger).
-
-## Requisitos Adicionais
-
-### Interface do Usuário
-
 - [ ] Layout responsivo para suportar diferentes tamanhos de tela.
 
 ## Instalação
