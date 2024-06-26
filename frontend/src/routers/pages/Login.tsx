@@ -8,7 +8,7 @@ const inputData = [
 ];
 export const Login = () => {
   return (
-    <section className="container-login">
+    <section className="container-auth">
       <div className="info">
         <h1>
           Acesse Seus Projetos e Continue{" "}

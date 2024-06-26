@@ -10,7 +10,7 @@ const inputData = [
 
 export const Signup = () => {
   return (
-    <section className="container-signup">
+    <section className="container-auth">
       <div className="info">
         <h1>
           <strong>Junte-se a Nós</strong> e Comece a Gerenciar Seus Projetos com

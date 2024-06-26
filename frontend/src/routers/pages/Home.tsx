@@ -32,7 +32,7 @@ export const Home = () => {
           <p>Mantenha seus projetos seguros!</p>
           <h1>
             Seu novo <strong>Gerenciador</strong> de Projetos{" "}
-            <strong>favorito!</strong>
+            <strong>Favorito!</strong>
           </h1>
 
           <Link
@@ -50,7 +50,9 @@ export const Home = () => {
       </section>
 
       <section id="features">
+        <div className="up-orb" />
         <Carousel />
+        <div className="down-orb" />
       </section>
 
       <section id="news">
@@ -122,6 +124,7 @@ export const Home = () => {
       </section>
 
       <section id="community">
+        <div className="up-orb" />
         <h2>
           Junte-se à Comunidade <strong>Smart Plan</strong>
         </h2>
@@ -136,6 +139,7 @@ export const Home = () => {
         <Link to={userAuthenticated ? "/dashboard" : "/login"}>
           Experimente agora mesmo!
         </Link>
+        <div className="down-orb" />
       </section>
     </section>
   );

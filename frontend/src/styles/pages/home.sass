@@ -61,6 +61,30 @@
 
   #features
     margin: 6rem auto
+    position: relative
+
+  #features,
+  #community
+
+    .up-orb,
+    .down-orb
+      position: absolute
+      z-index: -10
+      filter: blur(10rem)
+      height: 25rem
+      width: 25rem
+      border-radius: 50%
+
+    .up-orb
+      background-color: $color-primary
+      top: -16rem
+      right: -0rem
+
+    .down-orb
+      background-color: $color-light
+      filter: blur(16rem)
+      bottom: -10rem
+      left: -0rem
 
   #news
     position: relative
@@ -96,9 +120,21 @@
     max-width: 60rem
     margin: 12rem auto
     text-align: center
+    position: relative
 
     p
       margin-bottom: 6rem
+
+    .up-orb
+      background-color: $color-light
+      filter: blur(16rem)
+      top: -16rem
+      right: -10rem
+
+    .down-orb
+      background-color: $color-primary
+      bottom: -10rem
+      left: -10rem
 
   .icon
     font-size: 6rem

@@ -1,4 +1,4 @@
-.container-signup
+.container-auth
   height: 100vh
   max-width: 1080px
   margin: 0 auto
@@ -21,11 +21,13 @@
     display: flex
     flex-direction: column
     align-items: center
+    justify-content: center
 
     margin: 0 auto
     padding: 2.4rem
 
     width: 40rem
+    height: 36rem
     border-radius: 2rem
     backdrop-filter: blur(4px)
     box-shadow: 0 4px 10px $color-dark
@@ -47,5 +49,8 @@
       padding: 2rem
       border-radius: 50px
 
-    a:hover
-      color: $color-primary
+    p,
+    a
+      font-size: 1.2rem
+      &:hover
+        color: $color-primary
