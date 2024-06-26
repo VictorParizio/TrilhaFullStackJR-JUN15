@@ -21,7 +21,7 @@ export const validateToken = async (
 
   if (!authorization) {
     return res.status(401).json({
-      message: "Para ter acesso, faça login ou cadastre-se!",
+      message: "Seja bem-vendo(a), faça login ou cadastre-se!",
     });
   }
 
@@ -42,17 +42,17 @@ export const validateToken = async (
     if (error.name === "TokenExpiredError") {
       return res.status(401).json({
         message:
-          "O Token de acesso expirou. Faça login para acessar esta funcionalidade.",
+          "Essa sessão expirou, faça login ou cadastre-se!",
       });
     } else if (error.name === "JsonWebTokenError") {
       return res.status(401).json({
         message:
-          "Para acessar este recurso um token de autenticação válido deve ser enviado.",
+          "Essa sessão expirou, faça login ou cadastre-se!",
       });
     } else if (error.name === "SyntaxError") {
       return res.status(401).json({
         message:
-          "Para acessar este recurso um token de autenticação válido deve ser enviado.",
+          "Essa sessão expirou, faça login ou cadastre-se!",
       });
     } else {
       return res
