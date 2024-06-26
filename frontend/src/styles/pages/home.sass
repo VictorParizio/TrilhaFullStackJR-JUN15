@@ -5,10 +5,10 @@
   left: 0
   z-index: -2
 
-  background-color: #000000
+  background-color: $color-dark
   height: 500px
   width: 100vw
-  box-shadow: 0 8px 16px #000000, 0 -8px 16px #000000
+  box-shadow: 0 8px 16px $color-dark, 0 -8px 16px $color-dark
 
 .home
   section
@@ -51,8 +51,8 @@
         animation: slideUp 2s ease-in-out forwards
 
   a
-    background-color: #e53939
-    background: linear-gradient(to bottom, #e53939, #000000)
+    background-color: $color-primary
+    background: linear-gradient(to bottom, $color-primary, $color-dark)
     box-shadow: 0 2px 8px #242424
     width: 24rem
     text-align: center
@@ -73,25 +73,24 @@
       grid-template-columns: repeat(3, 1fr)
       gap: 60px
 
-    ul
       li
         display: flex
         width: 32rem
         height: 8rem
         color: rgb(152, 152, 152)
 
-      &:hover
-        color: #ffffff
-        scale: 1.1
-        border-top: #e53939 1px solid
-        border-bottom: #e53939 1px solid
-        height: 8rem
-        padding: 8px
-        border-radius: 8px
-        transition: ease 0.3s
+        &:hover
+          color: $color-light
+          scale: 1.1
+          border-top: $color-primary 1px solid
+          border-bottom: $color-primary 1px solid
+          height: 8rem
+          padding: 8px
+          border-radius: 8px
+          transition: ease 0.3s
 
-      p
-        font-size: 1.2rem
+        p
+          font-size: 1.2rem
 
   #community
     max-width: 60rem
