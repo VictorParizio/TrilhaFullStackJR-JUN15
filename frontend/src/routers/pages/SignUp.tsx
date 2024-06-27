@@ -1,14 +1,53 @@
-import { Link } from "react-router-dom";
-import { Input } from "../../components/Input";
-
-const userAuthenticated = false;
-const inputData = [
-  { label: "Nome", type: "text", placeholder: "Digite seu nome" },
-  { label: "Email", type: "email", placeholder: "Digite seu email" },
-  { label: "Senha", type: "password", placeholder: "Digite seu senha" },
-];
+import { Link, useNavigate } from "react-router-dom";
+import { InputForm } from "../../components/InputForm";
+import { postAPI } from "../../http";
+import { useForm } from "../../hooks/useForm";
 
 export const Signup = () => {
+  const [formValues, handleInputChange] = useForm({
+    name: "",
+    email: "",
+    password: "",
+  });
+
+  const { name, email, password } = formValues;
+  const navigate = useNavigate();
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    if (name.trim() === "" && email.trim() === "" && password.trim() === "") {
+      throw new Error("Todos os campos são obrigatórios");
+    }
+
+    if (name.length < 3) {
+      throw new Error("O Nome deve conter ao menos 3 digitos");
+    }
+
+    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+    if (!emailRegex.test(email)) {
+      throw new Error("Formato de email inválido");
+    }
+
+    if (password.length < 6) {
+      throw new Error("Senha deve conter ao menos 6 digitos");
+    }
+
+    try {
+      const response = await postAPI("register", formValues);
+      console.log(response);
+      sessionStorage.setItem("token", response.access_token);
+      navigate("/dashboard");
+    } catch (error: any) {
+      if (error?.response?.data?.message) {
+        throw new Error(error.response.data.message);
+      } else {
+        console.log("Erro do lado do servidor: " + error);
+      }
+      throw error;
+    }
+  };
   return (
     <section className="container-auth">
       <div className="info">
@@ -32,22 +71,38 @@ export const Signup = () => {
       </div>
       <section className="container-form">
         <div className="bg-blur" />
-        <form className="form">
-          {inputData.map((input) => (
-            <Input
-              key={input.label}
-              label={input.label}
-              type={input.type}
-              placeholder={input.placeholder}
-            />
-          ))}
-        </form>
+        <form className="form" onSubmit={handleSubmit}>
+          <InputForm
+            textLabel={"Nome"}
+            type="text"
+            name="name"
+            placeholder="Digite seu nome"
+            value={name}
+            onChange={handleInputChange}
+          />
+          <InputForm
+            textLabel={"Email"}
+            type="email"
+            name="email"
+            placeholder="Digite seu email"
+            value={email}
+            onChange={handleInputChange}
+          />
+          <InputForm
+            textLabel={"Senha"}
+            type="password"
+            name="password"
+            placeholder="Digite sua senha"
+            value={password}
+            onChange={handleInputChange}
+          />
 
-        <button>Cadastrar</button>
+          <button>Cadastrar</button>
+        </form>
 
         <div>
           <p>Já Tem uma Conta?</p>
-          <Link to={userAuthenticated ? "/dashboard" : "/"} className="cta">
+          <Link to="/login" className="cta">
             Faça Login
           </Link>
         </div>
