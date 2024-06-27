@@ -1,92 +1,125 @@
-![Código Certo Coders](https://utfs.io/f/3b2340e8-5523-4aca-a549-0688fd07450e-j4edu.jfif)
+# Smart Plan (Back-End)
 
-# 📚 Trilha Inicial FullStack Jr
-Este projeto tem como objetivo desenvolver uma aplicação web completa para gerenciamento de projetos, juntamente com um servidor back-end. A aplicação web permitirá aos usuários listar, cadastrar, editar e excluir projetos, cada um contendo um título e uma descrição.
+![Node](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)
+![Express](https://img.shields.io/badge/Express.js-404D59?style=for-the-badge&logo=express&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+![Prisma](https://img.shields.io/badge/Prisma-000000?style=for-the-badge&logo=Prisma&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
 
-## FrontEnd:
-- **HTML/CSS/JavaScript puro:** Utilize HTML para estruturar a página, CSS para estilização e JavaScript puro (ou jQuery, se preferir) para manipulação de DOM e interações com o servidor.
-- Implemente uma página para listar os projetos cadastrados.
-- Desenvolva formulários para adicionar e editar projetos.
-- Inclua botões para editar e deletar projetos, com confirmação antes de executar a ação.
+## Índice
 
-## BackEnd:
-- **Node.js (Express), Python (Flask/Django), Java (Spring Boot), etc.:** Escolha uma linguagem e framework de sua preferência para criar um servidor que irá fornecer APIs RESTful para operações CRUD.
-- Configure rotas para manipular os projetos, utilizando métodos HTTP adequados (GET, POST, PUT, DELETE).
-- Utilize um banco de dados (SQL ou NoSQL) para armazenar os projetos.
+- [Descrição](#descrição)
+- [Tecnologias Utilizadas](#tecnologias-utilizadas)
+- [Requisitos](#requisitos)
+- [Instalação](#instalação)
+- [Docker](#docker)
+- [Requisitos Funcionais](#requisitos-funcionais)
+- [Regras de Negócio](#regras-de-negócio)
+- [Requisitos Técnicos](#requisitos-técnicos)
+- [Autores](#autores)
+- [Contato](#contato)
 
-#### Tecnologias Recomendadas:
-- **Front-end:** HTML, CSS, JavaScript, React.js
-- **Back-end:** Node.js, Express.js
-- **Banco de Dados:** SQLite (com Sequelize ou outro ORM)
-- **Autenticação:** JWT (JSON Web Tokens)
-- **Deploy:** Heroku, Vercel, ou outro serviço de hospedagem gratuito
+## Descrição
 
-Primordial: Utilizar as cores da paleta da **Codigo Certo Coders:**
-![Codigo Certo Coders Cores](https://github.com/codigocerto/TrilhaFrontEndJR-JUN15/assets/170693068/5ced1a97-b2c6-4f54-836c-7b3e115f879f)
-- **#000000** (preto)
-- **#e53939** (vermelho)
-- **#ffffff** (branco)
+**O Servidor Smart Plan** é um sistema para Gestão de Projetos, desenvolvido com Node.js, Express e TypeScript, utilizando Docker integrado com Prisma para gerenciar o banco de dados PostgreSQL.
 
-### Detalhes Técnicos: 🔧
-- **Boas Práticas:** Utilizar boas práticas de código limpo, legível e bem documentado.
-- **Git:** Utilizar Git para controle de versão e submeter o projeto através de um repositório público no GitHub.
+O sistema permite aos usuários se cadastrar, fazer login e listar, cadastrar, editar e excluir projetos, contendo um título e uma descrição.
 
-### Apreciações: 🎉
-- **Permitir edição dos conteúdos.**
-- **Utilização máxima possível de HTML semântico.**
-- **Segurança Reforçada.**
-- **Documentação Excepcional.**
-- **Escalabilidade**
+## Tecnologias Utilizadas
 
-### Dicas para Abordar o Projeto 🌟
-- **Crie um Fork desse Repositório.**
-- **Criar do Zero:** É fundamental que o projeto seja desenvolvido completamente do zero, demonstrando suas habilidades e criatividade desde o início.
-- **Atenção aos Detalhes Visuais:** Utilize a paleta de cores e elementos visuais de forma coesa para uma experiência impactante.
-- **Versionamento com Git:** Faça uso eficiente do Git para controlar suas alterações e manter um histórico claro do desenvolvimento.
+- **Node.js**
+- **Express.js**
+- **TypeScript**
+- **Prisma**
+- **Docker**
+- **PostgreSQL**
 
-### Critérios de Avaliação: 📝
-- **Documentação:** Documentação adequada do projeto, incluindo descrição do funcionamento, instruções de instalação e configuração (se aplicável).
-- **Funcionalidade:** A aplicação deve atender à estrutura da página e aos requisitos definidos.
-- **Qualidade do Código:** O código deve ser limpo, bem estruturado e adequadamente documentado.
-- **UI/UX:** A interface do usuário deve ser intuitiva e visualmente atraente.
-- **Uso do Git:** Utilização eficaz do controle de versão com mensagens de commit significativas.
-- **Hospedagem e Deploy** A aplicação front-end e o servidor back-end estão hospedados de forma acessível ao público.
+## Requisitos
 
-### Não Queremos 🚫
-- Descobrir que o candidato não foi quem realizou o teste.
-- Ver commits grandes sem muita explicação nas mensagens no repositório.
-- Entregas padrão ou cópias de outros projetos. Buscamos originalidade e autenticidade em cada contribuição.
+- Node.js
+- Docker
 
-### Prazo ⏳
-Os candidatos devem completar a trilha em no máximo em 2 semanas, começando a contar a partir de 15/06.
+## Instalação
 
-A conclusão da trilha inicial é um requisito obrigatório para avançar para a trilha 
-final. Caso a trilha inicial não seja concluída dentro do prazo estabelecido, o 
-candidato estará impossibilitado de prosseguir para trilha final.
+1. Clone o repositório:
 
-**Data máxima para entrega: 29/06**
+   ```sh
+   git clone https://github.com/seu-usuario/backend-smart-plan.git
+   cd backend-smart-plan
+   ```
 
-### Instruções de Entrega: 📬
-Após finalizar o projeto, publique-o em uma URL pública (por exemplo, Vercel, Netlify, GitHub Pages, etc.) e hospede o seu servidor na nuvem. Use serviços que ofereçam uso gratiuto por um período, como a AWS e preencha o [Formulário](https://forms.gle/gZViPMTSDV5nidSu6):  
+2. Instale as dependências:
 
----
+   ```sh
+   npm install
+   ```
 
-### Desafio da Inovação 🚀
-Achou esse projeto inicial simples? Eleve ainda mais! Estamos em busca de mentes inovadoras que não apenas criem, mas que também desafiem os padrões. Como você pode transformar essa estrutura inicial em algo verdadeiramente extraordinário? Demonstre o poder da sua criatividade e o impacto das suas ideias inovadoras!
+3. Configure as variáveis de ambiente (crie um arquivo `.env` baseado no `.env.example`).
 
----
+4. Para iniciar o servidor em modo de desenvolvimento com hot-reload:
 
-🔗 **Mantenha-se Conectado:**
-- [Discord](https://discord.gg/wzA9FGZHNv)
-- [Website](http://www.codigocertocoders.com.br/)
-- [LinkedIn](https://www.linkedin.com/company/codigocerto/)
-  
-🌐 **Contato:**
-- Email: codigocertocoders@gmail.com
+   ```sh
+   npm run dev
+   ```
 
----
+5. Acesse no seu navegador:
+   ```sh
+   http://localhost:3000/
+   ```
 
-### Precisa de Ajuda?
-Está com alguma dificuldade, encontrou algum problema no desafio ou tem alguma sugestão pra gente? Crie uma issue e descreva o que achar necessário.
+## Docker
 
-**Construindo o amanhã, hoje.**
+O sistema utiliza o Docker para configurar e gerenciar o banco de dados PostgreSQL. Certifique-se de ter o Docker instalado e funcionando em seu sistema.
+
+### Docker Compose
+
+Para iniciar o banco de dados PostgreSQL usando Docker Compose execute o comando:
+
+```sh
+docker compose up -d
+```
+
+## Requisitos Funcionais
+
+### Registro e Autenticação
+
+- [ x ] Deve ser possível se Registrar.
+- [ x ] Deve ser possível se Autenticar.
+
+### Gerenciamento de Projetos
+
+- [ x ] Deve ser possível Criar um projeto.
+- [ x ] Deve ser possível Atualizar um projeto.
+- [ x ] Deve ser possível Deletar um projeto.
+- [ x ] Deve ser possível Listar todos os projetos.
+
+## Regras de Negócio
+
+- [ x ] O usuário não pode se cadastrar com email duplicado.
+- [ x ] Apenas usuários autenticados podem acessar os projetos.
+- [ x ] Apenas o usuário que criou o projeto pode acessar, editar e excluir um projeto.
+- [ x ] Todo projeto deve conter título e descrição.
+
+## Requisitos Técnicos
+
+- [ x ] Os dados do sistema devem persistir em um banco de dados.
+- [ x ] A senha deve ser criptografada antes de ser armazenada no banco.
+- [ x ] Autenticar o usuário ao Registrar-se.
+- [ x ] Autenticar o usuário ao Entrar no sistema.
+- [ x ] Implementar documentação da API (e.g., usando Swagger).
+- [ x ] Isolar todas as chamadas ao BD na camada de Service.
+- [ x ] Validar todos os dados que chegam no sistema.
+
+## Autor
+
+**Victor Parizio**
+
+## Contato
+
+Se tiver alguma dúvida, entre em contato
+
+- [Hotmail](victorparizio@hotmail.com)
+- [LinkedIn](https://www.linkedin.com/in/victorpariziobackend/)
+- [GitHub](https://github.com/VictorParizio)
+- [Portifólio](https://portfolio-victor-parizio.vercel.app/)
