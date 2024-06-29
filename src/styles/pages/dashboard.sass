@@ -1,0 +1,133 @@
+.welcome-message
+  display: flex
+  flex-direction: column
+  justify-content: center
+  margin: 0 auto
+  padding: 4rem
+  h1,
+  h1 strong
+    font-size: 3.2rem
+    line-height: 3.6rem
+  p
+    max-width: 50rem
+    padding-top: 2rem
+  
+.container-dashboard
+  display: grid
+  grid-template-columns: 8rem auto
+  height: 100vh
+  overflow: hidden
+  transition: 0.7s
+
+  &.active
+    grid-template-columns: 20rem auto
+
+  .container-sidebar
+    .logo
+      position: absolute
+      top: 2rem
+      left: 2rem
+      z-index: 1
+
+    .btn-mobile
+      position: fixed
+      top: 7.6rem
+      left: 2rem
+      display: flex
+      border: none
+      background: none
+      cursor: pointer
+      z-index: 1
+
+      .hamburguer
+        height: 2rem
+        width: 2.4rem
+        border-top: 4px solid
+
+        &::after,
+        &::before
+          content: ""
+          display: block
+          height: 4px
+          background: currentColor
+          margin-top: 4px
+          transition: 0.3s
+          position: relative
+
+        &:hover
+          color: $color-primary
+
+    .menu
+      position: absolute
+      top: 0
+      left: -20rem
+      z-index: 0
+
+      flex-direction: column
+      align-items: center
+      gap: 3.2rem
+
+      height: 100vh
+      width: 20rem
+      padding-top: 10rem
+      background: $color-dark
+      transition: 1s
+
+      a
+        width: 100%
+        font-size: 1.8rem
+        &:hover
+          border-bottom: $color-primary 1px solid
+
+      .content-sidebar
+        position: fixed
+        display: flex
+        flex-direction: column
+        gap: 2rem
+        padding: 2rem
+
+        li
+          padding-left: 3.4rem
+          svg
+            font-size: 2.4rem
+            position: fixed
+            margin-top: 2px
+            left: 2rem
+
+    &.active
+      .btn-mobile
+        position: fixed
+        top: 7.6rem
+        left: 2rem
+
+        .hamburguer
+          border-top-color: transparent
+
+          &::before
+            transform: rotate(135deg)
+
+          &::after
+            transform: rotate(-135deg)
+            top: -8px
+
+      .menu
+        top: 0
+        left: 0
+        padding-top: 10rem
+        transition: 0.7s
+
+  .container-board
+    width: 100%
+    position: relative
+
+    .up-orb
+      background-color: $color-light
+      filter: blur(16rem)
+      top: -6rem
+      right: -4rem
+
+    .down-orb
+      background-color: $color-primary
+      bottom: -4rem
+      left: -4rem
+

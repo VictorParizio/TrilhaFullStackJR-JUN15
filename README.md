@@ -1,92 +1,116 @@
-![Código Certo Coders](https://utfs.io/f/3b2340e8-5523-4aca-a549-0688fd07450e-j4edu.jfif)
+# Smart Plan (Front-End)
 
-# 📚 Trilha Inicial FullStack Jr
-Este projeto tem como objetivo desenvolver uma aplicação web completa para gerenciamento de projetos, juntamente com um servidor back-end. A aplicação web permitirá aos usuários listar, cadastrar, editar e excluir projetos, cada um contendo um título e uma descrição.
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+![React_Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
+![Redux](https://img.shields.io/badge/Redux-593D88?style=for-the-badge&logo=redux&logoColor=white)
+![Axios](https://img.shields.io/badge/Axios-20232A?style=for-the-badge&logo=Axios&logoColor=white)
+![Sass](https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white)
 
-## FrontEnd:
-- **HTML/CSS/JavaScript puro:** Utilize HTML para estruturar a página, CSS para estilização e JavaScript puro (ou jQuery, se preferir) para manipulação de DOM e interações com o servidor.
-- Implemente uma página para listar os projetos cadastrados.
-- Desenvolva formulários para adicionar e editar projetos.
-- Inclua botões para editar e deletar projetos, com confirmação antes de executar a ação.
+## Índice
 
-## BackEnd:
-- **Node.js (Express), Python (Flask/Django), Java (Spring Boot), etc.:** Escolha uma linguagem e framework de sua preferência para criar um servidor que irá fornecer APIs RESTful para operações CRUD.
-- Configure rotas para manipular os projetos, utilizando métodos HTTP adequados (GET, POST, PUT, DELETE).
-- Utilize um banco de dados (SQL ou NoSQL) para armazenar os projetos.
+- [Descrição](#descrição)
+- [Tecnologias Utilizadas](#tecnologias-utilizadas)
+- [Paleta de Cores](#paleta-de-cores)
+- [Funcionalidades do Front-End](#funcionalidades-do-front-end)
+- [Requisitos Funcionais](#requisitos-funcionais)
+- [Regras de Negócio](#regras-de-negócio)
+- [Requisitos Técnicos](#requisitos-técnicos)
+- [Requisitos Adicionais](#requisitos-adicionais)
+- [Instalação](#instalação)
+- [Autores](#autores)
+- [Contato](#contato)
 
-#### Tecnologias Recomendadas:
-- **Front-end:** HTML, CSS, JavaScript, React.js
-- **Back-end:** Node.js, Express.js
-- **Banco de Dados:** SQLite (com Sequelize ou outro ORM)
-- **Autenticação:** JWT (JSON Web Tokens)
-- **Deploy:** Heroku, Vercel, ou outro serviço de hospedagem gratuito
+## Descrição
 
-Primordial: Utilizar as cores da paleta da **Codigo Certo Coders:**
-![Codigo Certo Coders Cores](https://github.com/codigocerto/TrilhaFrontEndJR-JUN15/assets/170693068/5ced1a97-b2c6-4f54-836c-7b3e115f879f)
+A **Smart Plan** é uma plataforma robusta e intuitiva para Gestão de Projetos, desenvolvida com uma stack moderna incluindo React.js, TypeScript e Sass. Esta aplicação responsiva permite aos usuários acessar e gerenciar seus projetos de maneira eficiente e prática, em qualquer lugar e a qualquer momento.
+
+Com uma interface amigável e design responsivo, a **Smart Plan** visa proporcionar uma experiência de usuário excelente, garantindo que a gestão de projetos seja simplificada e eficiente.
+
+## Tecnologias Utilizadas
+
+- **React.js**
+- **TypeScript**
+- **Sass**
+
+## Paleta de Cores
+
+Utilize as cores da paleta da **Codigo Certo Coders**:
+
 - **#000000** (preto)
 - **#e53939** (vermelho)
 - **#ffffff** (branco)
 
-### Detalhes Técnicos: 🔧
-- **Boas Práticas:** Utilizar boas práticas de código limpo, legível e bem documentado.
-- **Git:** Utilizar Git para controle de versão e submeter o projeto através de um repositório público no GitHub.
+## Funcionalidades do Front-End
 
-### Apreciações: 🎉
-- **Permitir edição dos conteúdos.**
-- **Utilização máxima possível de HTML semântico.**
-- **Segurança Reforçada.**
-- **Documentação Excepcional.**
-- **Escalabilidade**
+A plataforma oferece funcionalidades completas para registro e autenticação, permitindo aos usuários:
 
-### Dicas para Abordar o Projeto 🌟
-- **Crie um Fork desse Repositório.**
-- **Criar do Zero:** É fundamental que o projeto seja desenvolvido completamente do zero, demonstrando suas habilidades e criatividade desde o início.
-- **Atenção aos Detalhes Visuais:** Utilize a paleta de cores e elementos visuais de forma coesa para uma experiência impactante.
-- **Versionamento com Git:** Faça uso eficiente do Git para controlar suas alterações e manter um histórico claro do desenvolvimento.
+- Se cadastrar com facilidade.
+- Fazer login de forma segura.
+- Listar todos os projetos cadastrados.
+- Cadastrar novos projetos com título e descrição.
+- Editar detalhes de projetos existentes.
+- Excluir projetos quando necessário.
 
-### Critérios de Avaliação: 📝
-- **Documentação:** Documentação adequada do projeto, incluindo descrição do funcionamento, instruções de instalação e configuração (se aplicável).
-- **Funcionalidade:** A aplicação deve atender à estrutura da página e aos requisitos definidos.
-- **Qualidade do Código:** O código deve ser limpo, bem estruturado e adequadamente documentado.
-- **UI/UX:** A interface do usuário deve ser intuitiva e visualmente atraente.
-- **Uso do Git:** Utilização eficaz do controle de versão com mensagens de commit significativas.
-- **Hospedagem e Deploy** A aplicação front-end e o servidor back-end estão hospedados de forma acessível ao público.
+## Requisitos Funcionais
 
-### Não Queremos 🚫
-- Descobrir que o candidato não foi quem realizou o teste.
-- Ver commits grandes sem muita explicação nas mensagens no repositório.
-- Entregas padrão ou cópias de outros projetos. Buscamos originalidade e autenticidade em cada contribuição.
+### Registro e Autenticação
 
-### Prazo ⏳
-Os candidatos devem completar a trilha em no máximo em 2 semanas, começando a contar a partir de 15/06.
+- [ ] Deve ser possível se Registrar.
+- [ ] Deve ser possível se Autenticar.
 
-A conclusão da trilha inicial é um requisito obrigatório para avançar para a trilha 
-final. Caso a trilha inicial não seja concluída dentro do prazo estabelecido, o 
-candidato estará impossibilitado de prosseguir para trilha final.
+### Gerenciamento de Projetos
 
-**Data máxima para entrega: 29/06**
+- [ ] Deve ser possível Criar um projeto.
+- [ ] Deve ser possível Atualizar um projeto.
+- [ ] Deve ser possível Deletar um projeto.
+- [ ] Deve ser possível Listar todos os projetos.
 
-### Instruções de Entrega: 📬
-Após finalizar o projeto, publique-o em uma URL pública (por exemplo, Vercel, Netlify, GitHub Pages, etc.) e hospede o seu servidor na nuvem. Use serviços que ofereçam uso gratiuto por um período, como a AWS e preencha o [Formulário](https://forms.gle/gZViPMTSDV5nidSu6):  
+### Filtragem e Pesquisa (opcional)
 
----
+- [ ] Deve ser possível Pesquisar um projeto.
+- [ ] Deve ser possível Filtrar projetos por status ou data.
 
-### Desafio da Inovação 🚀
-Achou esse projeto inicial simples? Eleve ainda mais! Estamos em busca de mentes inovadoras que não apenas criem, mas que também desafiem os padrões. Como você pode transformar essa estrutura inicial em algo verdadeiramente extraordinário? Demonstre o poder da sua criatividade e o impacto das suas ideias inovadoras!
+### Gerenciamento de Usuários (opcional)
 
----
+- [ ] Deve ser possível visualizar o perfil do usuário.
+- [ ] Deve ser possível atualizar as informações do perfil do usuário.
+- [ ] Deve ser possível resetar a senha do usuário.
 
-🔗 **Mantenha-se Conectado:**
-- [Discord](https://discord.gg/wzA9FGZHNv)
-- [Website](http://www.codigocertocoders.com.br/)
-- [LinkedIn](https://www.linkedin.com/company/codigocerto/)
-  
-🌐 **Contato:**
-- Email: codigocertocoders@gmail.com
+## Regras de Negócio
 
----
+- [ ] O usuário não pode se cadastrar com email duplicado.
+- [ ] Apenas usuários autenticados podem acessar os projetos.
+- [ ] Todo projeto deve conter título e descrição.
+- [ ] Somente o criador pode acessar e manipular o projeto (opcional).
+- [ ] O projeto deve ter um status (e.g., "Em andamento", "Concluído").
 
-### Precisa de Ajuda?
-Está com alguma dificuldade, encontrou algum problema no desafio ou tem alguma sugestão pra gente? Crie uma issue e descreva o que achar necessário.
+## Requisitos Técnicos
 
-**Construindo o amanhã, hoje.**
+- [ ] Armazenar o token de acesso do usuário ao Registrar-se.
+- [ ] Armazenar o token de acesso do usuário ao Entrar na aplicação.
+- [ ] Listar todos os projetos de um usuário.
+- [ ] Layout responsivo para suportar diferentes tamanhos de tela.
+
+## Instalação
+
+Instruções passo a passo sobre como instalar o projeto. Por exemplo:
+
+```bash
+git clone https://github.com/usuario/smart-plan.git
+cd smart-plan
+npm install
+```
+
+## Autor
+
+**Victor Parizio**
+
+## Contato
+
+Se tiver alguma dúvida, entre em contato
+
+- [Hotmail](victorparizio@hotmail.com)
+- [LinkedIn](https://www.linkedin.com/in/victorpariziobackend/)
+- [GitHub](https://github.com/VictorParizio)
+- [Portifólio](https://portfolio-victor-parizio.vercel.app/)
