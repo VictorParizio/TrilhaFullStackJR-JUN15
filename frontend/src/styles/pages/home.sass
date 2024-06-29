@@ -3,10 +3,10 @@
   position: absolute
   top: 0
   left: 0
-  z-index: -2
+  z-index: -3
 
   background-color: $color-dark
-  height: 500px
+  height: 50rem
   width: 100vw
   box-shadow: 0 8px 16px $color-dark, 0 -8px 16px $color-dark
 
@@ -29,7 +29,7 @@
       justify-content: center
       flex-direction: column
       height: 45rem
-      width: 500px
+      width: 50rem
 
       p
         letter-spacing: 3.2px
@@ -43,48 +43,28 @@
     img
       position: absolute
       top: 0
-      right: -120px
+      right: -12rem
       max-height: 60rem
-      z-index: -1
+      z-index: -2
 
       &.animated
         animation: slideUp 2s ease-in-out forwards
 
-  a
-    background-color: $color-primary
-    background: linear-gradient(to bottom, $color-primary, $color-dark)
-    box-shadow: 0 2px 8px #242424
-    width: 24rem
-    text-align: center
-    padding: 2rem
-    border-radius: 50px
-
   #features
-    margin: 6rem auto
+    margin: 0 auto
     position: relative
-
-  #features,
-  #community
-
-    .up-orb,
-    .down-orb
-      position: absolute
-      z-index: -10
-      filter: blur(10rem)
-      height: 25rem
-      width: 25rem
-      border-radius: 50%
+    padding: 5.2rem 0
 
     .up-orb
       background-color: $color-primary
       top: -16rem
-      right: -0rem
+      right: -0
 
     .down-orb
       background-color: $color-light
       filter: blur(16rem)
       bottom: -10rem
-      left: -0rem
+      left: -0
 
   #news
     position: relative
@@ -94,8 +74,8 @@
 
     ul
       display: grid
-      grid-template-columns: repeat(3, 1fr)
-      gap: 60px
+      grid-template-columns: repeat(3, 32rem)
+      gap: 6rem
 
       li
         display: flex
@@ -121,6 +101,9 @@
     margin: 12rem auto
     text-align: center
     position: relative
+
+    h2
+      margin: 4rem auto
 
     p
       margin-bottom: 6rem
@@ -149,6 +132,10 @@
     font-size: 5rem
     margin-right: 12px
 
+a.btn-main
+  width: 24rem
+  padding: 2rem
+
 @keyframes slideUp
   0%
     transform: translateY(100%)
@@ -157,3 +144,57 @@
   100%
     transform: translateY(0)
     opacity: 1
+
+@media (max-width: 1164px)
+  .home
+    #news
+      ul
+        grid-template-columns: repeat(2, 32rem)
+        justify-content: center
+        gap: 4rem
+
+      .bg-container
+        height: 58rem
+
+@media (max-width: 747px)
+  .home
+    .bg-blur
+      position: absolute
+      top: 3.2%
+      left: 2rem
+      height: 40rem
+      width: 50rem
+      background-color: rgba(255, 255, 255, 0.2)
+      backdrop-filter: blur(10px)
+      border-radius: 32px
+      z-index: -1
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1)
+
+    #news
+      ul
+        grid-template-columns: repeat(1, 32rem)
+        gap: 3rem
+
+      .bg-container
+        height: 90rem
+
+@media (max-width: 600px)
+  .home
+    .bg-blur
+      top: 10.6%
+      left: 50%
+      transform: translate(-50%, -50%)
+      width: 90vw
+
+    #hero
+      .info-hero
+        h1,
+        strong
+          font-size: 6rem
+          line-height: 3.6rem
+          width: 32rem
+
+    #news,
+    #community
+      h2
+        width: 32rem

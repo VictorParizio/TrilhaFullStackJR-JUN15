@@ -2,6 +2,12 @@ import { Link, useNavigate } from "react-router-dom";
 import { InputForm } from "../../components/InputForm";
 import { postAPI } from "../../http";
 import { useForm } from "../../hooks/useForm";
+import { validateInput } from "../../utils/schemaValidate";
+import { FormEvent } from "react";
+
+interface ApiResponse {
+  access_token: string;
+}
 
 export const Signup = () => {
   const [formValues, handleInputChange] = useForm({
@@ -13,41 +19,25 @@ export const Signup = () => {
   const { name, email, password } = formValues;
   const navigate = useNavigate();
 
-  const handleSubmit = async (event) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    if (name.trim() === "" && email.trim() === "" && password.trim() === "") {
-      throw new Error("Todos os campos são obrigatórios");
-    }
-
-    if (name.length < 3) {
-      throw new Error("O Nome deve conter ao menos 3 digitos");
-    }
-
-    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-
-    if (!emailRegex.test(email)) {
-      throw new Error("Formato de email inválido");
-    }
-
-    if (password.length < 6) {
-      throw new Error("Senha deve conter ao menos 6 digitos");
-    }
-
     try {
-      const response = await postAPI("register", formValues);
-      console.log(response);
+      validateInput({ name, email, password });
+
+      const response = await postAPI("register", formValues) as ApiResponse;
       sessionStorage.setItem("token", response.access_token);
       navigate("/dashboard");
     } catch (error: any) {
       if (error?.response?.data?.message) {
         throw new Error(error.response.data.message);
       } else {
-        console.log("Erro do lado do servidor: " + error);
+        console.error("Erro do lado do servidor: " + error);
       }
       throw error;
     }
   };
+
   return (
     <section className="container-auth">
       <div className="info">
@@ -69,6 +59,7 @@ export const Signup = () => {
           levar sua produtividade a um novo nível.
         </p>
       </div>
+
       <section className="container-form">
         <div className="bg-blur" />
         <form className="form" onSubmit={handleSubmit}>
@@ -97,7 +88,7 @@ export const Signup = () => {
             onChange={handleInputChange}
           />
 
-          <button>Cadastrar</button>
+          <button className="btn-main" type="submit">Cadastrar</button>
         </form>
 
         <div>
@@ -107,6 +98,8 @@ export const Signup = () => {
           </Link>
         </div>
       </section>
+      <div className="up-orb" />
+      <div className="down-orb" />
     </section>
   );
 };

@@ -1,11 +1,13 @@
-type InputForm = {
+import { ChangeEvent } from "react";
+
+interface InputFormProps {
   textLabel: string;
   type: string;
   name: string;
   value: string;
   placeholder: string;
-  onChange: () => void;
-};
+  onChange: (event: ChangeEvent<HTMLInputElement>) => void;
+}
 
 export const InputForm = ({
   textLabel,
@@ -14,7 +16,7 @@ export const InputForm = ({
   value,
   placeholder,
   onChange,
-}: InputForm) => {
+}: InputFormProps) => {
   return (
     <>
       <label htmlFor={name}>{textLabel}</label>

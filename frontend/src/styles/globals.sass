@@ -16,16 +16,23 @@ a,
 a:visited
   font-weight: 500
   color: $color-light
+  border-bottom: transparent 1px solid
 
 a.active
   color: $color-primary
   border-bottom: $color-light 1px solid
-
-a:hover
-  border-bottom: $color-primary 1px solid
 
 strong
   color: $color-primary
 
 button
   cursor: pointer
+
+.up-orb,
+.down-orb
+  position: absolute
+  z-index: -10
+  filter: blur(10rem)
+  height: 25rem
+  width: 25rem
+  border-radius: 50%

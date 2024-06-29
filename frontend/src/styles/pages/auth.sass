@@ -1,10 +1,11 @@
 .container-auth
-  height: 100vh
+  min-height: 100vh
   max-width: 1080px
   margin: 0 auto
   display: flex
   align-items: center
   gap: 8rem
+  padding: 4rem
 
   .info
     max-width: 50rem
@@ -26,7 +27,7 @@
     margin: 0 auto
     padding: 2.4rem
 
-    width: 40rem
+    max-width: 50rem
     height: 36rem
     border-radius: 2rem
     backdrop-filter: blur(4px)
@@ -39,19 +40,32 @@
 
     .form
       flex-direction: column
+      max-width: 50rem
 
     button
-      background-color: $color-primary
-      background: linear-gradient(to bottom, $color-primary, $color-dark)
-      width: 24rem
-      border: none
       margin: 2.4rem 0
       padding: 2rem
-      border-radius: 50px
 
     p,
     a
       font-size: 1.2rem
 
     a:hover
-        color: $color-primary
+      color: $color-primary
+
+  .up-orb
+    background-color: $color-light
+    filter: blur(16rem)
+    top: 0
+    right: 0
+
+  .down-orb
+    background-color: $color-primary
+    bottom: 0
+    left: 0
+
+@media(max-width: 678px)
+  .container-auth
+    flex-direction: column
+    gap: 6rem
+    margin: 6rem auto

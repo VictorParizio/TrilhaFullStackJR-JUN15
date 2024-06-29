@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const userAuthenticated = false;
+const userAuthenticated = !!sessionStorage.getItem("token");
 
 export const ErrorPage = () => {
   return (
@@ -15,8 +15,10 @@ export const ErrorPage = () => {
         encontrar o que procura!
       </p>
 
-      <Link to={userAuthenticated ? "/dashboard" : "/"} className="cta">
-        Vamos refazer a trilha
+      <Link to={userAuthenticated ? "/dashboard" : "/"} className="btn-main">
+        {userAuthenticated
+          ? "Voltar para Dashboard"
+          : "Voltar para a página Inicial"}
       </Link>
     </section>
   );

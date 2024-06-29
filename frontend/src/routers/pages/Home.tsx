@@ -10,10 +10,9 @@ import { Carousel } from "../../components/Carousel";
 
 import ipad from "/mockup/ipad.png";
 
-const userAuthenticated = false;
-
 export const Home = () => {
   const [loaded, setLoaded] = useState(false);
+  const userAuthenticated = !!sessionStorage.getItem("token");
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -26,6 +25,7 @@ export const Home = () => {
   return (
     <section className="home">
       <div className="bg-banner" />
+      <div className="bg-blur" />
 
       <section id="hero">
         <div className="info-hero">
@@ -37,7 +37,7 @@ export const Home = () => {
 
           <Link
             to={userAuthenticated ? "/dashboard" : "/login"}
-            className="cta"
+            className="btn-main"
           >
             Experimente agora mesmo!
           </Link>
@@ -136,7 +136,10 @@ export const Home = () => {
           objetivos de maneira mais eficiente e organizada.
         </p>
 
-        <Link to={userAuthenticated ? "/dashboard" : "/login"}>
+        <Link
+          to={userAuthenticated ? "/dashboard" : "/login"}
+          className="btn-main"
+        >
           Experimente agora mesmo!
         </Link>
         <div className="down-orb" />

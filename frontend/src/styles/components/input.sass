@@ -4,6 +4,7 @@ form
     position: absolute
 
   input
+    height: 4.8rem
     width: 100%
     background: rgba(238, 238, 238, 0.3)
     border: 1px solid rgba(238, 238, 238, 0)
@@ -11,10 +12,10 @@ form
     border-radius: 25px
     padding: 1.2rem 2rem
 
-  input::placeholder
-    color: $color-light
-    font-size: 1.2rem
+    &::placeholder
+      color: rgb(165, 165, 165)
+      font-size: 1.2rem
 
-  input:focus
-    border-color: $color-primary
-    outline: none
+    &:focus
+      border-color: $color-primary
+      outline: none

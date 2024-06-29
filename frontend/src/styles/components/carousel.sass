@@ -1,13 +1,21 @@
-.carousel
-  display: flex
-  align-items: center
-  gap: 32px
-  width: 60rem
+#features
+  .carousel
+    max-width: 54rem
+    margin: 6rem auto
 
-  .arrow
-    border: none
-    background-color: inherit
-    cursor: pointer
+    .control
+      display: flex
+      justify-content: space-between
+      width: 12rem
+      margin: 4rem 0 0
 
-    svg
-      font-size: 3rem
+      .arrow
+        border: none
+        background-color: inherit
+        cursor: pointer
+
+        svg
+          font-size: 3rem
+
+          &:hover
+            color: $color-primary

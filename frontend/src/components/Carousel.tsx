@@ -43,18 +43,20 @@ export function Carousel() {
       (prevSlide) => (prevSlide - 1 + slides.length) % slides.length
     );
   };
-  
+
   return (
     <section className="carousel">
-      <button onClick={handlePrevSlide} className="arrow">
-        <FaArrowAltCircleLeft />
-      </button>
-
       <div className="slide">{slides[currentSlide].description}</div>
+      
+      <div className="control">
+        <button onClick={handlePrevSlide} className="arrow">
+          <FaArrowAltCircleLeft />
+        </button>
 
-      <button onClick={handleNextSlide} className="arrow">
-        <FaArrowAltCircleRight />
-      </button>
+        <button onClick={handleNextSlide} className="arrow">
+          <FaArrowAltCircleRight />
+        </button>
+      </div>
     </section>
   );
 }

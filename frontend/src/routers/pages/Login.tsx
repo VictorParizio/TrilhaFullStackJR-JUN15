@@ -2,28 +2,32 @@ import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "../../hooks/useForm";
 import { postAPI } from "../../http";
 import { InputForm } from "../../components/InputForm";
+import { FormEvent } from "react";
+
+interface ApiResponse {
+  access_token: string;
+}
 
 export const Login = () => {
   const [formValues, handleInputChange] = useForm({ email: "", password: "" });
   const { email, password } = formValues;
   const navigate = useNavigate();
 
-  const handleSubmit = async (event) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     if (email.trim() === "" || password.trim() === "") {
       throw new Error("Todos os campos são obrigatórios");
     }
     try {
-      const response = await postAPI("session", formValues);
+      const response = await postAPI("session", formValues) as ApiResponse;
       sessionStorage.setItem("token", response.access_token);
       navigate("/dashboard");
     } catch (error: any) {
-      if (error.response.data.message) {
-        console.log(error.response.data.message);
+      if (error?.response?.data?.message) {
         throw new Error(error.response.data.message);
       }
-      console.log(error.response.data.message);
+      console.error("Erro do lado do servidor:", error);
       throw new Error(
         "Ocorreu um erro ao tentar fazer login. Por favor, tente novamente mais tarde."
       );
@@ -67,7 +71,7 @@ export const Login = () => {
             onChange={handleInputChange}
           />
 
-          <button>Entrar</button>
+          <button className="btn-main" type="submit">Entrar</button>
         </form>
 
         <div>
@@ -75,6 +79,8 @@ export const Login = () => {
           <Link to="/signup">Crie uma conta</Link>
         </div>
       </section>
+      <div className="up-orb" />
+      <div className="down-orb" />
     </section>
   );
 };

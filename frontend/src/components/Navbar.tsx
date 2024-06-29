@@ -1,4 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
+import { MenuMobile } from "./MenuMobile";
 
 export const Navbar = () => {
   const { pathname: currentPathname, hash: currentHash } = useLocation();
@@ -12,7 +13,7 @@ export const Navbar = () => {
 
   return (
     <div className="container-header">
-      <section className="header">
+      <header className="header">
         <Link to="/" className="logo">
           <strong>Smart</strong>Plan
         </Link>
@@ -21,22 +22,23 @@ export const Navbar = () => {
           <>
             <nav>
               <ul>
-                {navItems.map(({ href, label }) => (
-                  <li key={href}>
+                {navItems.map((route) => (
+                  <li key={route.label}>
                     <a
-                      href={href}
-                      className={currentHash === href ? "active" : ""}
+                      href={route.href}
+                      className={currentHash === route.href ? "active" : ""}
                     >
-                      {label}
+                      {route.label}
                     </a>
                   </li>
                 ))}
               </ul>
             </nav>
-            <div className="auth">
+            <div className="auth home">
               <Link to="/login">Login</Link>
               <Link to="/signup">Signup</Link>
             </div>
+            <MenuMobile />
           </>
         )}
 
@@ -51,7 +53,7 @@ export const Navbar = () => {
             <Link to="/login">login</Link>
           </div>
         )}
-      </section>
+      </header>
     </div>
   );
 };
