@@ -12,6 +12,10 @@
   "basePath": "/",
   "servers": [
     {
+      "url": "https://trilhafullstackjr-jun15-production.up.railway.app",
+      "description": "Servidor Remoto"
+    },
+    {
       "url": "http://localhost:3000",
       "description": "Servidor Local"
     }
