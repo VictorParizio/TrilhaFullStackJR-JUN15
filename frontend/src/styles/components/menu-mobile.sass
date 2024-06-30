@@ -1,0 +1,77 @@
+.container-header
+  .header
+    .mobile,
+    .btn-mobile
+      display: none
+
+@media (max-width: 600px)
+  .container-header
+    .header
+      .mobile
+        display: flex
+
+        .btn-mobile
+          display: flex
+          border: none
+          background: none
+          cursor: pointer
+          z-index: 5
+
+          .hamburguer
+            width: 3rem
+            border-top: 4px solid
+
+            &::after,
+            &::before
+              content: ""
+              display: block
+              height: 4px
+              background: currentColor
+              margin-top: 8px
+              transition: 0.3s
+              position: relative
+
+            &:hover
+              color: $color-primary
+
+        .menu
+          position: fixed
+          top: 0px
+          right: -30rem
+          z-index: 4
+
+          flex-direction: column
+          align-items: center
+          gap: 2rem
+
+          height: 100vh
+          width: 30rem
+          background: $color-dark
+          box-shadow: 0 0 68px rgba(0, 0, 0, 0.59)
+          transition: 1s
+
+        &.active
+          .btn-mobile
+            position: fixed
+            top: 2.4rem
+            right: 2rem
+
+            .hamburguer
+              border-top-color: transparent
+
+              &::before
+                transform: rotate(135deg)
+
+              &::after
+                transform: rotate(-135deg)
+                top: -12px
+
+          .menu
+            right: 0
+            display: flex
+            align-items: center
+            transition: 0.7s
+
+            li
+              a
+                font-size: 1.8rem

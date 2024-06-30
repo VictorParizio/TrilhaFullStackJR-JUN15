@@ -1,0 +1,42 @@
+.btn-main,
+.btn-secundary,
+.btn-cancel
+  background-color: $color-primary
+  background: linear-gradient(to bottom, $color-primary, $color-dark)
+  text-align: center
+  min-width: 10rem
+  border: none
+  transition: .3s ease
+  &:hover
+    scale: 1.1
+    border: none
+    box-shadow: 6px 6px 8px $color-dark, -2px -2px 8px $color-primary,
+  &:active
+    color: $color-inative
+    box-shadow: none
+
+.btn-main,
+.btn-cancel
+  padding: 1.4rem
+  border-radius: 50px
+
+.btn-main[disabled]
+  box-shadow: none
+  &:hover
+    scale: 1
+
+.btn-secundary
+  box-shadow: 6px 6px 8px $color-dark, -2px -2px 8px $color-primary,
+  border-radius: 8px
+  padding: 1rem 1.6rem
+  font-size: 1rem
+
+.btn-cancel
+  background: $color-modal
+  padding: 1.3rem
+  border: solid 1px
+  color: $color-light
+  font-weight: 600
+  &:hover
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.6), $color-dark)
+    box-shadow: 6px 6px 8px $color-dark, -2px -2px 8px $color-inative,
