@@ -15,7 +15,7 @@ export const Project = () => {
   const [description, setDescription] = useState("");
   const [isSending, setIsSending] = useState(false);
   const [projectData, setProjectData] = useState<Project[]>([]);
-  const [isButtonDisabled, setIsButtonDisabled] = useState(true);
+  const [message, setMessage] = useState("");
 
   const dataProject = { title, description };
 
@@ -31,7 +31,6 @@ export const Project = () => {
 
   const handleAddProject = async (event: FormEvent) => {
     event.preventDefault();
-
     setIsSending(true);
 
     try {
@@ -40,9 +39,10 @@ export const Project = () => {
       setProjectData(dataAPI);
     } catch (error: any) {
       if (error.response?.data?.message) {
-        console.error(error.response.data.message);
-      } else {
-        console.error("Ocorreu um erro ao criar um novo projeto.");
+        console.error(
+          error.response.data.message ||
+            "Ocorreu um erro ao criar um novo projeto."
+        );
       }
     } finally {
       setTitle("");
@@ -54,27 +54,32 @@ export const Project = () => {
 
   useEffect(() => {
     (async function () {
+      setIsSending(true);
+      setMessage(
+        "Quase lá! Grandes ideias precisam de um tempo para ficarem prontas"
+      );
+
       try {
         const dataAPI = await getAPI("project");
         setProjectData(dataAPI);
-      } catch (error: any) {
-        if (error.response?.data?.message) {
-          console.error(error.response.data.message);
-        } else {
-          console.error("Ocorreu um erro ao carregar os projetos.");
+
+        if (dataAPI.length === 0) {
+          setMessage("Clique em Novo para adicionar um Projeto.");
         }
-        setProjectData([]);
+      } catch (error: any) {
+        console.error(
+          error.response?.data?.message ||
+            "Ocorreu um erro ao carregar os projetos."
+        );
+      } finally {
+        setTitle("");
+        setDescription("");
+        setIsSending(false);
       }
     })();
   }, []);
 
-  useEffect(() => {
-    if (title.length < 3 || description.length < 3) {
-      setIsButtonDisabled(true);
-    } else {
-      setIsButtonDisabled(false);
-    }
-  }, [title, description]);
+  const isButtonDisabled = title.length < 3 || description.length < 3;
 
   return (
     <section className="container-project">
@@ -140,7 +145,11 @@ export const Project = () => {
                 >
                   {isSending ? "...enviando!" : "Adicionar"}
                 </button>
-                <button className="btn-cancel" onClick={toggleModal}>
+                <button
+                  type="button"
+                  className="btn-cancel"
+                  onClick={toggleModal}
+                >
                   Cancelar
                 </button>
               </div>
@@ -149,12 +158,10 @@ export const Project = () => {
         </div>
       )}
 
-      {projectData.length === 0 && (
-        <div className="loading">
-          <h2>Carregando...</h2>
-          <p>
-            Quase lá! Grandes ideias precisam de um tempo para ficarem prontas
-          </p>
+      {projectData.length === 0 && message && (
+        <div className="message">
+          <h2>{isSending ? "Carregando..." : "Pronto(a) para Começar?"}</h2>
+          <p>{message}</p>
         </div>
       )}
     </section>
