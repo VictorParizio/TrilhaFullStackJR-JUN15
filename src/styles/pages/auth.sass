@@ -1,0 +1,71 @@
+.container-auth
+  min-height: 100vh
+  max-width: 1080px
+  margin: 0 auto
+  display: flex
+  align-items: center
+  gap: 8rem
+  padding: 4rem
+
+  .info
+    max-width: 50rem
+
+    h1,
+    h1 strong
+      font-size: 2.4rem
+      margin-bottom: 4rem
+
+    p
+      margin: 1rem 0
+
+  .container-form
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+
+    margin: 0 auto
+    padding: 2.4rem
+
+    max-width: 50rem
+    height: 36rem
+    border-radius: 2rem
+    backdrop-filter: blur(4px)
+    box-shadow: 0 4px 10px $color-dark
+
+    div,
+    .form
+      display: flex
+      gap: 1rem
+
+    .form
+      flex-direction: column
+      max-width: 50rem
+
+    button
+      margin: 2.4rem 0
+      padding: 2rem
+
+    p,
+    a
+      font-size: 1.2rem
+
+    a:hover
+      color: $color-primary
+
+  .up-orb
+    background-color: $color-light
+    filter: blur(16rem)
+    top: 0
+    right: 0
+
+  .down-orb
+    background-color: $color-primary
+    bottom: 0
+    left: 0
+
+@media(max-width: 678px)
+  .container-auth
+    flex-direction: column
+    gap: 6rem
+    margin: 6rem auto
