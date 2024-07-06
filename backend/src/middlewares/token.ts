@@ -1,4 +1,4 @@
-import { prisma } from "@/lib/prisma";
+import { findUserById } from "@/repositories/user.repository";
 import { checkToken } from "@/util/jwt";
 import { NextFunction, Request, Response } from "express";
 
@@ -28,8 +28,7 @@ export const validateToken = async (
   try {
     const token = authorization.split(" ")[1];
     const { id } = checkToken(token) as JwtPayload;
-
-    const user = await prisma.user.findFirst({ where: { id } });
+    const user = await findUserById(id);
 
     if (!user) {
       return res.status(404).json({ message: "O usuário não foi encontrado" });
@@ -41,18 +40,15 @@ export const validateToken = async (
   } catch (error: any) {
     if (error.name === "TokenExpiredError") {
       return res.status(401).json({
-        message:
-          "Essa sessão expirou, faça login ou cadastre-se!",
+        message: "Essa sessão expirou, faça login ou cadastre-se!",
       });
     } else if (error.name === "JsonWebTokenError") {
       return res.status(401).json({
-        message:
-          "Essa sessão expirou, faça login ou cadastre-se!",
+        message: "Essa sessão expirou, faça login ou cadastre-se!",
       });
     } else if (error.name === "SyntaxError") {
       return res.status(401).json({
-        message:
-          "Essa sessão expirou, faça login ou cadastre-se!",
+        message: "Essa sessão expirou, faça login ou cadastre-se!",
       });
     } else {
       return res

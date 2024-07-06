@@ -1,16 +1,16 @@
 import { createBrowserRouter } from "react-router-dom";
 import { App } from "../App";
-import { Home } from "./pages/Home";
-import { Signup } from "./pages/SignUp";
-import { Login } from "./pages/Login";
-import { ErrorPage } from "./pages/ErrorPage";
-import { Dashboard } from "./pages/Dashboard";
-import { Project } from "./pages/Dashboard/Project";
-import { ProjectDetails } from "./pages/Dashboard/ProjectDetails";
-import { Profile } from "./pages/Dashboard/Profile";
-import { TeamMember } from "./pages/Dashboard/TeamMember";
-import { Contact } from "./pages/Dashboard/Contact";
-import { Settings } from "./pages/Dashboard/Settings";
+import { Home } from "../pages/Home";
+import { Signup } from "../pages/SignUp";
+import { Login } from "../pages/Login";
+import { ErrorPage } from "../pages/ErrorPage";
+import { Dashboard } from "../pages/Dashboard";
+import { Project } from "../pages/Dashboard/Project";
+import { ProjectDetails } from "../pages/Dashboard/ProjectDetails";
+import { Profile } from "../pages/Dashboard/Profile";
+import { TeamMember } from "../pages/Dashboard/TeamMember";
+import { Contact } from "../pages/Dashboard/Contact";
+import { Settings } from "../pages/Dashboard/Settings";
 
 export const router = createBrowserRouter([
   {

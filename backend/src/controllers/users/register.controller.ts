@@ -19,7 +19,7 @@ export const registerUser = async (req: Request, res: Response) => {
     const data = { name, email, password: encryptedPassword };
     const newUser = await createUser(data);
     const { password: _, ...userWithoutPassword } = newUser;
-    const access_token = generateToken({ user_id: newUser.id }, "8h");
+    const access_token = generateToken({ id: newUser.id }, "8h");
 
     return res.status(201).json({
       newUser: userWithoutPassword,
